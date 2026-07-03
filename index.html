@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Portfolio</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<style>
+  :root {
+    --primary: #4f46e5;
+    --dark: #1e1b2e;
+    --light-bg: #f8f7fc;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: var(--dark) !important;
+  }
+  .navbar-brand, .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+  }
+  .nav-link:hover {
+    color: var(--primary) !important;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--dark), #322b52);
+    color: #fff;
+    padding: 100px 0 80px;
+  }
+  .hero img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary);
+  }
+  .hero h1 {
+    font-weight: 700;
+    font-size: 2.6rem;
+  }
+  .hero p.lead {
+    color: #cfcbe6;
+  }
+  .social-icons a {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0 10px;
+    transition: color 0.2s;
+  }
+  .social-icons a:hover {
+    color: var(--primary);
+  }
+
+  /* Section Titles */
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .section-title h2 {
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+  .section-title h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+  .bg-light-custom {
+    background-color: var(--light-bg);
+  }
+
+  /* About */
+  .about-icons i {
+    font-size: 2rem;
+    color: var(--primary);
+  }
+
+  /* Skills */
+  .skill-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+    height: 100%;
+  }
+  .skill-card:hover {
+    transform: translateY(-8px);
+  }
+  .skill-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+  }
+  .progress {
+    height: 8px;
+    border-radius: 5px;
+  }
+
+  /* Projects */
+  .project-card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+  }
+  .project-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .badge-tech {
+    background-color: var(--primary);
+    margin-right: 5px;
+    font-weight: 400;
+  }
+
+  /* Education / Timeline */
+  .timeline-item {
+    border-left: 3px solid var(--primary);
+    padding-left: 25px;
+    padding-bottom: 35px;
+    position: relative;
+  }
+  .timeline-item::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    left: -9px;
+    top: 3px;
+  }
+
+  /* Contact */
+  .contact-info i {
+    color: var(--primary);
+    font-size: 1.3rem;
+    width: 30px;
+  }
+  .btn-primary-custom {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+  }
+  .btn-primary-custom:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+    color: #fff;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--dark);
+    color: #cfcbe6;
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Aditi Sharma</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header id="home" class="hero text-center">
+  <div class="container">
+    <img src="https://placehold.co/220x220/4f46e5/ffffff?text=Photo" alt="Profile Photo" class="mb-4">
+    <h1>Hi, I'm <span style="color:#a5b4fc;">Aditi Sharma</span></h1>
+    <p class="lead">Computer Science Student &nbsp;|&nbsp; Web Developer &nbsp;|&nbsp; Lifelong Learner</p>
+    <div class="social-icons my-3">
+      <a href="#"><i class="bi bi-github"></i></a>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+      <a href="#"><i class="bi bi-twitter-x"></i></a>
+      <a href="#"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+    <a href="#contact" class="btn btn-primary-custom btn-lg mt-2 px-4">Get In Touch</a>
+    <a href="#" class="btn btn-outline-light btn-lg mt-2 px-4 ms-2">Download CV</a>
+  </div>
+</header>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Me</h2>
+    </div>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <p class="fs-5">
+          I'm a third-year Computer Science student passionate about building clean,
+          user-friendly web applications. I enjoy solving problems, learning new
+          technologies, and collaborating on projects that make a real difference.
+          When I'm not coding, you'll find me exploring open-source projects or
+          writing tech blogs.
+        </p>
+        <div class="row text-center mt-4">
+          <div class="col-4 about-icons">
+            <i class="bi bi-mortarboard"></i>
+            <p class="mt-2 mb-0 fw-semibold">B.Tech CSE</p>
+            <small class="text-muted">3rd Year</small>
+          </div>
+          <div class="col-4 about-icons">
+            <i class="bi bi-code-slash"></i>
+            <p class="mt-2 mb-0 fw-semibold">6+ Projects</p>
+            <small class="text-muted">Completed</small>
+          </div>
+          <div class="col-4 about-icons">
+            <i class="bi bi-award"></i>
+            <p class="mt-2 mb-0 fw-semibold">3 Certificates</p>
+            <small class="text-muted">Online Courses</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img src="https://placehold.co/600x400/f8f7fc/4f46e5?text=About+Me" class="img-fluid rounded-4 shadow" alt="About illustration">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="bg-light-custom">
+  <div class="container">
+    <div class="section-title">
+      <h2>My Skills</h2>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="bi bi-filetype-html"></i>
+          <h6>HTML5</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="bi bi-filetype-css"></i>
+          <h6>CSS3 / Bootstrap</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="bi bi-filetype-js"></i>
+          <h6>JavaScript</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-card">
+          <i class="bi bi-database"></i>
+          <h6>SQL / MongoDB</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="mb-3">
+          <div class="d-flex justify-content-between"><span>HTML / CSS</span><span>90%</span></div>
+          <div class="progress"><div class="progress-bar bg-primary" style="width:90%"></div></div>
+        </div>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between"><span>JavaScript</span><span>75%</span></div>
+          <div class="progress"><div class="progress-bar bg-primary" style="width:75%"></div></div>
+        </div>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between"><span>Python</span><span>80%</span></div>
+          <div class="progress"><div class="progress-bar bg-primary" style="width:80%"></div></div>
+        </div>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between"><span>Bootstrap / React</span><span>70%</span></div>
+          <div class="progress"><div class="progress-bar bg-primary" style="width:70%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="container">
+    <div class="section-title">
+      <h2>My Projects</h2>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100">
+          <img src="https://placehold.co/400x200/4f46e5/ffffff?text=Project+1" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Student Result Portal</h5>
+            <p class="card-text text-muted">A web app to manage and display student results with an admin dashboard.</p>
+            <span class="badge badge-tech">HTML</span>
+            <span class="badge badge-tech">CSS</span>
+            <span class="badge badge-tech">PHP</span>
+            <div class="mt-3">
+              <a href="#" class="btn btn-sm btn-primary-custom">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-outline-secondary">Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100">
+          <img src="https://placehold.co/400x200/6366f1/ffffff?text=Project+2" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Expense Tracker</h5>
+            <p class="card-text text-muted">A JavaScript-based app to track daily expenses with charts and local storage.</p>
+            <span class="badge badge-tech">JavaScript</span>
+            <span class="badge badge-tech">Chart.js</span>
+            <div class="mt-3">
+              <a href="#" class="btn btn-sm btn-primary-custom">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-outline-secondary">Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card h-100">
+          <img src="https://placehold.co/400x200/818cf8/ffffff?text=Project+3" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Weather App</h5>
+            <p class="card-text text-muted">Real-time weather forecast app using a public weather API.</p>
+            <span class="badge badge-tech">API</span>
+            <span class="badge badge-tech">Bootstrap</span>
+            <div class="mt-3">
+              <a href="#" class="btn btn-sm btn-primary-custom">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-outline-secondary">Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="bg-light-custom">
+  <div class="container">
+    <div class="section-title">
+      <h2>Education</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <div class="timeline-item">
+          <h5>B.Tech in Computer Science</h5>
+          <p class="text-muted mb-1">ABC University &nbsp;|&nbsp; 2023 - 2027</p>
+          <p>Currently in 3rd year, focusing on web development, data structures, and databases. CGPA: 8.7/10</p>
+        </div>
+
+        <div class="timeline-item">
+          <h5>Senior Secondary (XII), Science</h5>
+          <p class="text-muted mb-1">XYZ Higher Secondary School &nbsp;|&nbsp; 2021 - 2023</p>
+          <p>Scored 92% with Computer Science as a core subject.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h5>Secondary (X)</h5>
+          <p class="text-muted mb-1">XYZ Higher Secondary School &nbsp;|&nbsp; 2020 - 2021</p>
+          <p>Scored 94%, developed early interest in programming.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact Me</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h5 class="mb-4">Let's talk about your project</h5>
+        <div class="contact-info mb-3 d-flex align-items-center">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Kolkata, West Bengal, India</span>
+        </div>
+        <div class="contact-info mb-3 d-flex align-items-center">
+          <i class="bi bi-envelope-fill"></i>
+          <span>aditi.sharma@example.com</span>
+        </div>
+        <div class="contact-info mb-3 d-flex align-items-center">
+          <i class="bi bi-telephone-fill"></i>
+          <span>+91 98765 43210</span>
+        </div>
+        <div class="social-icons mt-4">
+          <a href="#" class="text-dark"><i class="bi bi-github"></i></a>
+          <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Your Email</label>
+              <input type="email" class="form-control" placeholder="john@example.com" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" placeholder="Subject" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary-custom px-4">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p class="mb-0">&copy; 2026 Aditi Sharma. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Simple contact form handler (demo only)
+  const form = document.querySelector('#contact form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      form.reset();
+    });
+  }
+</script>
+
+</body>
+</html>
